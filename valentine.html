@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Valentines</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+</head>
+<style type="text/css">
+	*{
+		padding: 0;
+		margin: 0;
+		font-family: arial;
+	}
+	body{
+
+		background-image: url(https://img.freepik.com/free-vector/blurred-valentine-s-day-wallpaper_23-2148819570.jpg);
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	.container{
+		max-width: 1000px;
+		width: 100%;
+		height: 100vh;
+		margin: 0 auto;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		overflow: hidden;
+	}
+	.letter{
+		margin: 0 auto;
+		width: 80%;
+		height: 100px;
+	text-align: center;
+	}
+	 button{
+		width: 90px;
+		height: 50px;
+		border-radius: 10px;
+		border: 1px solid rgba(255,0,0,.7);
+		margin: 0 20px;
+		background: rgba(255,0,0,.5);
+		color: white;
+		font-weight: bold;
+
+		
+	}
+	button:last-child{
+		position: absolute;	
+		right: 0px;
+		background: rgba(255,0,0,.3);
+	}
+	.btn{
+		width: 250px;
+		height: auto;
+		margin: 0 auto;
+		display: flex;
+		justify-content: space-between;
+		position: relative;
+
+	}
+	img{
+		position: absolute;
+		width: 100px;
+		display: none;
+	}
+	#cat{
+		bottom: 60px;
+		left: 40px;
+	}
+	#cry{
+		display: flex;
+		top: 50px;
+		display: none;
+	}
+	#last-cry{
+		display: flex;
+		bottom: 100px;
+		right: 40px;
+		display: none;
+	}
+	#twerk-heart{
+		height: 250px;
+		width: 250px;
+		display: none;
+	}
+</style>
+<body>
+<div class="container">
+   <div class="item">
+   	<div class="letter">
+		<h1 style="font-size: 40px;">Will you be my Valentine?</h1>
+	</div>
+	<div class="btn">
+	<button id="yes">Yes</button>
+	<button id="no">No</button>
+	</div>
+	<img id="cat"src="https://media.tenor.com/JaQeDPGZvHoAAAAM/cute-cat.gif">
+	<img id="cry"src="https://media.tenor.com/busG1y15D00AAAAM/animated-cat.gif">
+	<img id="last-cry"src="https://media.tenor.com/cgZNZOuh6SsAAAAM/sad-bear.gif">
+   </div>
+
+   <img id="twerk-heart" src="https://media.tenor.com/nAWhgr7E7-kAAAAC/twerk-heart.gif">
+   
+	
+</div>
+<script>
+	let click = 0;
+	var no =document.getElementById('no');
+	var yes =document.getElementById('yes');
+no.addEventListener('click', change);
+function change(){
+	var i = Math.floor(Math.random()*300)+1;
+	var j = Math.floor(Math.random()*600)+1;
+    no.style.left = i+"px";
+    no.style.top = j+"px";
+   
+    click += 1;
+    
+    if(click == 3){
+    	document.getElementById('cat').style.display ="block";
+    }else if(click == 4){
+    	document.getElementById('cry').style.display ="block";
+    }else if(click == 6){
+    	document.getElementById('last-cry').style.display ="block";
+    }
+    else if(click == 8){
+    	document.getElementById('yes').style.width ="200px";
+    }
+    else if(click == 9){
+    	document.getElementById('yes').style.height ="200px";
+    }
+    else if(click == 10){
+    	document.getElementById('yes').style.height ="400px";
+    	document.getElementById('yes').style.width ="300px";
+    }
+    else if(click == 11){
+    	document.getElementById('cry').style.display ="none";
+    	document.getElementById('cat').style.display ="none";
+    	document.getElementById('last-cry').style.display ="none";
+    }
+    else if(click == 12){
+    	document.getElementById('yes').innerHTML = "eto kasi pindutin mo idol ang laki laki na oh";
+    }
+
+
+    document.querySelector(".btn").style.position = "inherit";
+
+}
+yes.addEventListener('click',()=>{
+	document.querySelector(".item").style.display = "none";
+	document.getElementById('twerk-heart').style.display ="flex";
+});
+
+
+</script>
+</body>
+</html>
